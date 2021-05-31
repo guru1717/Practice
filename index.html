@@ -1,15 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>VueJS</title>
 </head>
 <body>
+  <!-- Include the library in the page -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-    <centre><h1>Mountains</h1></centre>
-    <p>CO<sub>2</sub></p>
-    <p>a<sup>2</sup></p>
+  <!-- Some HTML -->
+  <div id="root">
+    <p>{{ message }}</p>
+    <input v-model="message" />
+  </div>
+
+  <!-- Some JavaScript -->
+  <script>
+  console.log('Yes! We are using Vue version', Vue.version)
+
+  // New VueJS instance
+  var app = new Vue({
+    name: 'my-app',
+    // CSS selector of the root DOM element
+    el: '#root',
+    // Some data
+    data () {
+      return {
+        message: 'Hello Vue.js!',
+      }
+    },
+  })
+  </script>
 </body>
 </html>
